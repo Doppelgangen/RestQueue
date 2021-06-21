@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All messages</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<a th:if="${message.id} != 0">
+    <h1>
+        <a th:text="'Id: ' + ${message.id}"/>
+    </h1>
+    <h2>
+        <a th:text="${message.msg}"/>
+    </h2>
+</a>
+<br/>
+<a href="/">Return back</a>
+</body>

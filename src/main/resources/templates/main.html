@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h2>
+    <form th:method="post" th:action="@{/new}" th:object="${message}">
+        <label for="msg">Enter message</label>
+        <input type="text" th:field="*{msg}" id="msg"/>
+        <a style="color:red" th:if="${#fields.hasErrors('msg')}" th:errors="*{msg}">Message error</a>
+        <input type="submit" value="Add new message">
+    </form>
+    <a href="/all">Show all messages</a>
+    <br/>
+    <a href="/peek">Peek a message</a>
+    <br/>
+    <a href="/poll">Poll a message</a>
+    <br/>
+    <a href="/peekMax">Peek max message</a>
+</h2>
+</body>
+</html>

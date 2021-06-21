@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All messages</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h2>
+    <table>
+        <thead>
+        <tr>
+            <th> Id</th>
+            <th> Message</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${messages.empty}">
+            <td colspan="2"> No messages Available</td>
+        </tr>
+        <tr th:each="message : ${messages}">
+            <td><span th:text="${message.id}"> Id </span></td>
+            <td><span th:text="${message.msg}"> Message </span></td>
+        </tr>
+        </tbody>
+    </table>
+    <br/>
+    <a href="/">Return to main page</a>
+</h2>
+</body>
+</html>
